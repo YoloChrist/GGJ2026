@@ -119,6 +119,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &311096232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 1396279628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &379745333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 459762179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &389541197
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,8 +161,13 @@ MonoBehaviour:
   currentText: 
   dialogueText: {fileID: 702525565}
   dialogueUI: {fileID: 1271844611}
-  options: []
+  buttons:
+  - {fileID: 1551510199}
+  - {fileID: 311096232}
+  - {fileID: 1919166982}
+  - {fileID: 379745333}
   runningDialogue: 0
+  optionsGiven: 0
   dialogueInput:
     m_Name: Dialogue Input
     m_Type: 0
@@ -276,6 +291,42 @@ PrefabInstance:
     - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
       propertyPath: m_Name
       value: optionBtn (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389541198}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: returnDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: dialogueHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1381365946}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TMP_Text, Unity.TextMeshPro
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -515,6 +566,17 @@ RectTransform:
   m_AnchoredPosition: {x: 6.7636, y: -111.7455}
   m_SizeDelta: {x: 499.1027, y: 75.5515}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1167892927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5832422637624201030, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 1341814438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1271844611
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1271844613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +854,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: optionBtn (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389541198}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: returnDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: dialogueHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1167892927}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TMP_Text, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -802,6 +900,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2871454526655955669, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
   m_PrefabInstance: {fileID: 1341814438}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1381365946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5832422637624201030, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 459762179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1396279628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -894,6 +1003,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: optionBtn (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389541198}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: returnDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: dialogueHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2013467053}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TMP_Text, Unity.TextMeshPro
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -904,6 +1049,38 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2871454526655955669, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
   m_PrefabInstance: {fileID: 1396279628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1465068989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5832422637624201030, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 672112258012490401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1551510199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 672112258012490401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1919166982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 1341814438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2013467053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5832422637624201030, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+  m_PrefabInstance: {fileID: 1396279628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &672112258012490401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,6 +1172,42 @@ PrefabInstance:
     - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
       propertyPath: m_Name
       value: optionBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869703798641995711, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 389541198}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: returnDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: dialogueHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1465068989}
+    - target: {fileID: 4021852640827804057, guid: d8d8cb51a0d400f47b723325bbba748f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TMP_Text, Unity.TextMeshPro
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
