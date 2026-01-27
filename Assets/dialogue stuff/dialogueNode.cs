@@ -1,29 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class dialogueNode
+public class dialogueNode //stores the text and next nodes in the graph
 {
-    public string name;
-    public string text;
-    public string[] options;
-    public dialogueNode[] connectedNodes;
+    public string text; //dialogue content
+    public string[] options; //connected nodes and dialogue options
 
-    public dialogueNode(string n, string t, string[] o)
+    public dialogueNode(string t, string[] o) //constructor
     {
-        name = n;
         text = t;
         options = o;
-        connectedNodes = new dialogueNode[options.Length];
-    }
-
-    public void addNode(dialogueNode d)
-    {
-        for (int i=0; i<options.Length; i++)
-        {
-            if (d.name == options[i])
-            {
-                connectedNodes[i] = d;
-            }
-        }
     }
 }
