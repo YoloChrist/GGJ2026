@@ -1014,6 +1014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504845141}
   - component: {fileID: 504845140}
+  - component: {fileID: 504845142}
   m_Layer: 0
   m_Name: DialogueHandler
   m_TagString: Untagged
@@ -1080,6 +1081,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504845142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504845139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa30b4dee4753f46b5f930f34af0d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::accusingScript
 --- !u!1 &581922583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1457,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7631536412078650257, guid: 3778c449064763f43bc0c7514af64a56, type: 3}
+      propertyPath: dialogueKey
+      value: B
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1593,6 +1610,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3181924426127720255, guid: 32851392e162bb54ebcc69f17b52b80f, type: 3}
+      propertyPath: dialogueKey
+      value: A
+      objectReference: {fileID: 0}
     - target: {fileID: 6023923917060441782, guid: 32851392e162bb54ebcc69f17b52b80f, type: 3}
       propertyPath: m_Name
       value: NPC_Generic
@@ -2423,6 +2444,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7418287596652851216, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
   m_PrefabInstance: {fileID: 1293411351}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1311614127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2670851843453187924, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
+  m_PrefabInstance: {fileID: 1293411351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44dd9018969611e47bcf6edd3d050c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
 --- !u!1 &1356899705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,10 +2674,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366849094}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1311614127}
+        m_TargetAssemblyTypeName: PlayerCollision, Assembly-CSharp
+        m_MethodName: callAccuse
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

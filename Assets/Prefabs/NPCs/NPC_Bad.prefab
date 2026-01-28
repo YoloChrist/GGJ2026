@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2987733875186185267, guid: 4de65081ceba7374aa8b39adb37ac2aa, type: 3}
       propertyPath: m_Name
-      value: NPC_Bad Variant
+      value: NPC_Bad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987733875186185267, guid: 4de65081ceba7374aa8b39adb37ac2aa, type: 3}
+      propertyPath: m_TagString
+      value: villain
       objectReference: {fileID: 0}
     - target: {fileID: 3532576525118498088, guid: 4de65081ceba7374aa8b39adb37ac2aa, type: 3}
       propertyPath: m_Color.b

@@ -6,8 +6,9 @@ public class PlayerCollision : MonoBehaviour
     public static event Action<npcDialogueData> OnNpcContactStarted;
     public static event Action OnNpcContactEnded;
     public static event Action<string> OnNpcInteracted;
+    public static event Action<npcDialogueData> accuseNPC;
 
-    private npcDialogueData currentNpc;
+    [SerializeField] private npcDialogueData currentNpc;
 
     private void OnEnable()
     {
@@ -67,5 +68,10 @@ public class PlayerCollision : MonoBehaviour
         {
             OnNpcInteracted?.Invoke(currentNpc.getDialogueKey());
         }
+    }
+
+    public void callAccuse()
+    {
+        accuseNPC?.Invoke(currentNpc);
     }
 }
