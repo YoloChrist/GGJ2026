@@ -8,6 +8,7 @@ public class CrowdAgent : MonoBehaviour
     [SerializeField, Min(0.5f)] private float moveSpeed = 1f;
     [SerializeField, Min(0.01f)] private float arriveDistance = 0.1f;
     [SerializeField] private Vector2 repathIntervalRange = new Vector2(1.0f, 3.0f);
+    [SerializeField, Min(0.5f)] private float idleTime = 1f;
 
     private Rigidbody2D rb;
     private Vector2 target;
@@ -72,8 +73,9 @@ public class CrowdAgent : MonoBehaviour
             return;
 
         repathTimer -= Time.deltaTime;
+        idleTime -= Time.deltaTime;
 
-        if (!hasTarget || repathTimer <= 0f || IsAtTarget())
+        if (!hasTarget || ((repathTimer <= 0f || IsAtTarget()) && idleTime <= 0f))
             AcquireNewTarget();
     }
 
@@ -108,6 +110,7 @@ public class CrowdAgent : MonoBehaviour
         {
             target = newTarget;
             hasTarget = true;
+            idleTime = Random.Range(0.5f, 8f);
         }
         else
         {
