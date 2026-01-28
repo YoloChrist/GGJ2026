@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
@@ -30,31 +29,28 @@ public class PlayerCollision : MonoBehaviour
         TryClearNpcContact(collision.collider);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        TrySetNpcContact(other);
-    }
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    TrySetNpcContact(other);
+    //}
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        TryClearNpcContact(other);
-    }
+    //private void OnTriggerExit2D(Collider2D other)
+    //{
+    //    TryClearNpcContact(other);
+    //}
 
     private void TrySetNpcContact(Collider2D other)
     {
-        //Debug.Log($"Player contacted object: {other.name}");
         if (other != null && other.TryGetComponent<CrowdAgent>(out var agent))
         {
             currentNpc = agent;
 
-            //Debug.Log($"Player in contact with NPC: {agent.name}");
             OnNpcContactStarted?.Invoke(agent);
         }
     }
 
     private void TryClearNpcContact(Collider2D other)
     {
-        //Debug.Log($"Player ended contact with object: {other.name}");
         if (currentNpc == null || other == null)
             return;
 
