@@ -1,8 +1,13 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public static event Action<CrowdAgent> OnNpcContactStarted;
+    public static event Action OnNpcContactEnded;
+    public static event Action <CrowdAgent> OnNpcInteracted;
+
     private CrowdAgent currentNpc;
 
     private void OnEnable()
@@ -37,27 +42,26 @@ public class PlayerCollision : MonoBehaviour
 
     private void TrySetNpcContact(Collider2D other)
     {
-        Debug.Log($"Player contacted object: {other.name}");
+        //Debug.Log($"Player contacted object: {other.name}");
         if (other != null && other.TryGetComponent<CrowdAgent>(out var agent))
         {
             currentNpc = agent;
 
-            // stuff happens
-            // maybe show UI prompt
-            Debug.Log($"Player in contact with NPC: {agent.name}");
+            //Debug.Log($"Player in contact with NPC: {agent.name}");
+            OnNpcContactStarted?.Invoke(agent);
         }
     }
 
     private void TryClearNpcContact(Collider2D other)
     {
-        Debug.Log($"Player ended contact with object: {other.name}");
+        //Debug.Log($"Player ended contact with object: {other.name}");
         if (currentNpc == null || other == null)
             return;
 
         if (other.TryGetComponent<CrowdAgent>(out var agent) && agent == currentNpc)
         {
-            // contact ended - hide prompt
             currentNpc = null;
+            OnNpcContactEnded?.Invoke();
         }
     }
 
@@ -65,8 +69,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (currentNpc != null)
         {
-            // do something - open dialogue or kill them or somehting idk
-            Debug.Log($"Interacted with NPC: {currentNpc.name}");
+            OnNpcInteracted?.Invoke(currentNpc);
         }
     }
 }
