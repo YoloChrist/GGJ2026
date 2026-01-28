@@ -3,7 +3,9 @@ using UnityEngine;
 public class npcDialogueData : MonoBehaviour
 {
     [SerializeField] private string dialogueKey = "1";
+    [SerializeField] private string secondDialogueKey = "A";
     [SerializeField] private bool beingSpokenTo = false;
+    [SerializeField] private bool CANBeSpokenTo = true;
     [SerializeField] private CrowdAgent ca;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,7 +32,15 @@ public class npcDialogueData : MonoBehaviour
 
     public string getDialogueKey()
     {
-        return dialogueKey;
+        if (CANBeSpokenTo)
+        {
+            return dialogueKey;
+        }
+        else
+        {
+            return secondDialogueKey;
+        }
+        
     }
 
     void endNPCConversation()
@@ -47,6 +57,7 @@ public class npcDialogueData : MonoBehaviour
     {
         beingSpokenTo = true;
         ca.PauseAI();
+        CANBeSpokenTo = false;
     }
 
     public bool getSpokenTo()

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class accusingScript : MonoBehaviour
 {
@@ -29,10 +30,12 @@ public class accusingScript : MonoBehaviour
         if (npc.gameObject.tag == "villain")
         {
             Debug.Log("GOT HIM!");
+            SceneManager.LoadScene("winScene");
         }
         else
         {
             Debug.Log("nah get out");
+            SceneManager.LoadScene("loseScene");
         }
     }
 }

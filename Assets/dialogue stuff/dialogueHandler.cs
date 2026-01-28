@@ -60,7 +60,6 @@ public class dialogueHandler : MonoBehaviour
         dialogueInput.performed += checkCurrentState;
         dialogueInput.Enable();
         PlayerCollision.OnNpcInteracted += startConversation;
-        PlayerCollision.accuseNPC += endGame;
     }
 
     void OnDisable()
@@ -157,12 +156,6 @@ public class dialogueHandler : MonoBehaviour
         saveHintBtn.SetActive(false);
         dialogueUI.SetActive(false);
         triggerEndConversation?.Invoke();
-    }
-
-    void endGame(npcDialogueData npc)
-    {
-        hideOptions();
-        hideText();
     }
 
     public void returnDialogue(TMP_Text t) //gets the clicked button and checks the text to set the next node

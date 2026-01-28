@@ -44,6 +44,13 @@ public class PlayerCollision : MonoBehaviour
 
     private void TrySetNpcContact(Collider2D other)
     {
+        if (currentNpc != null)
+        {
+            if (currentNpc.getSpokenTo())
+                return;
+        }
+        
+
         if (other != null && other.TryGetComponent<npcDialogueData>(out var agent))
         {
             currentNpc = agent;
