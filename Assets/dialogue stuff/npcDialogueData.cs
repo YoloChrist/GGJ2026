@@ -11,7 +11,49 @@ public class npcDialogueData : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        string temp = "";
+
+        int val = rnjesus.rand.Next(1, 9);
+
+        switch (val)
+        {
+            case 1:
+                temp = "A";
+                break;
+            case 2:
+                temp = "B";
+                break;
+            case 3:
+                temp = "C";
+                break;
+            case 4:
+                temp = "D";
+                break;
+            case 5:
+                temp = "E";
+                break;
+            case 6:
+                temp = "F";
+                break;
+            case 7:
+                temp = "G";
+                break;
+            case 8:
+                temp = "H";
+                break;
+            case 9:
+                temp = "I";
+                break;
+        }
+
+        if (gameObject.name.Contains("Good"))
+        {
+            secondDialogueKey = temp;
+        }
+        else
+        {
+            dialogueKey = temp;
+        }
     }
 
     void OnEnable()

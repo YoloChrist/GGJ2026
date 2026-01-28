@@ -2,6 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public static class rnjesus
+{
+    public static readonly System.Random rand = new System.Random();
+}
+
 public class PlayerInputHandler : MonoBehaviour
 {
     public static event Action<Vector2> OnMoveInput;
