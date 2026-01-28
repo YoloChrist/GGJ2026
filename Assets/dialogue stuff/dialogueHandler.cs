@@ -57,6 +57,7 @@ public class dialogueHandler : MonoBehaviour
         //event for input
         dialogueInput.performed += checkCurrentState;
         dialogueInput.Enable();
+        PlayerInputHandler.OnInteractPressed += startConversation;
     }
 
     void OnDisable()
@@ -64,6 +65,7 @@ public class dialogueHandler : MonoBehaviour
         //event for input
         dialogueInput.performed -= checkCurrentState;
         dialogueInput.Disable();
+        PlayerInputHandler.OnInteractPressed -= startConversation;
     }
 
     public void startConversation(string key) //used to set the start node and start dialogue

@@ -61,7 +61,7 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void HandleInteractPressed()
+    private void HandleInteractPressed(string s)
     {
         if (currentNpc != null)
         {
