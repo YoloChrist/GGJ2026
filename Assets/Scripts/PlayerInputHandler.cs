@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
     public static event Action<Vector2> OnMoveInput;
-    public static event Action<string> OnInteractPressed;
+    public static event Action OnInteractPressed;
 
     private InputAction moveAction;
     private InputAction interactAction;
@@ -51,6 +51,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         if (interactAction != null && interactAction.WasPressedThisFrame())
-            OnInteractPressed?.Invoke("1");
+            OnInteractPressed?.Invoke();
     }
 }

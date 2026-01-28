@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public static event Action<CrowdAgent> OnNpcContactStarted;
+    public static event Action<npcDialogueData> OnNpcContactStarted;
     public static event Action OnNpcContactEnded;
-    public static event Action <CrowdAgent> OnNpcInteracted;
+    public static event Action<string> OnNpcInteracted;
 
-    private CrowdAgent currentNpc;
+    private npcDialogueData currentNpc;
 
     private void OnEnable()
     {
@@ -41,7 +41,7 @@ public class PlayerCollision : MonoBehaviour
 
     private void TrySetNpcContact(Collider2D other)
     {
-        if (other != null && other.TryGetComponent<CrowdAgent>(out var agent))
+        if (other != null && other.TryGetComponent<npcDialogueData>(out var agent))
         {
             currentNpc = agent;
 
@@ -54,18 +54,18 @@ public class PlayerCollision : MonoBehaviour
         if (currentNpc == null || other == null)
             return;
 
-        if (other.TryGetComponent<CrowdAgent>(out var agent) && agent == currentNpc)
+        if (other.TryGetComponent<npcDialogueData>(out var agent) && agent == currentNpc)
         {
             currentNpc = null;
             OnNpcContactEnded?.Invoke();
         }
     }
 
-    private void HandleInteractPressed(string s)
+    private void HandleInteractPressed()
     {
         if (currentNpc != null)
         {
-            OnNpcInteracted?.Invoke(currentNpc);
+            OnNpcInteracted?.Invoke(currentNpc.getDialogueKey());
         }
     }
 }

@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         PlayerCollision.OnNpcContactEnded -= HandleNpcContactEnded;
     }
 
-    private void HandleNpcContactStarted(CrowdAgent npc)
+    private void HandleNpcContactStarted(npcDialogueData npc)
     {
         if (uiInteractPopup != null)
             uiInteractPopup.SetActive(true);
