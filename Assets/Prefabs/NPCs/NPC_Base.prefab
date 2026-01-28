@@ -186,3 +186,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::npcDialogueData
   dialogueKey: 1
+  beingSpokenTo: 0
+  ca: {fileID: -7452198263407102754}

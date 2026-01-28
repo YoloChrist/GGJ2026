@@ -13,11 +13,13 @@ public class PlayerCollision : MonoBehaviour
     private void OnEnable()
     {
         PlayerInputHandler.OnInteractPressed += HandleInteractPressed;
+        dialogueHandler.triggerEndConversation += activatePlayerMovement;
     }
 
     private void OnDisable()
     {
         PlayerInputHandler.OnInteractPressed -= HandleInteractPressed;
+        dialogueHandler.triggerEndConversation -= activatePlayerMovement;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,6 +56,9 @@ public class PlayerCollision : MonoBehaviour
     {
         if (currentNpc == null || other == null)
             return;
+        
+        if (currentNpc.getSpokenTo())
+            return;
 
         if (other.TryGetComponent<npcDialogueData>(out var agent) && agent == currentNpc)
         {
@@ -67,7 +72,16 @@ public class PlayerCollision : MonoBehaviour
         if (currentNpc != null)
         {
             OnNpcInteracted?.Invoke(currentNpc.getDialogueKey());
+            PlayerMovement pm = gameObject.GetComponent<PlayerMovement>();
+            pm.enabled = false;
+            currentNpc.startNPCConversation();
         }
+    }
+
+    void activatePlayerMovement()
+    {
+        PlayerMovement pm = gameObject.GetComponent<PlayerMovement>();
+        pm.enabled = true;
     }
 
     public void callAccuse()
