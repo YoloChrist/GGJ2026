@@ -72,13 +72,17 @@ public class dialogueHandler : MonoBehaviour
 
     public void startConversation(string key) //used to set the start node and start dialogue
     {
-        saveUsed = false;
-        currentNode = allNodes[key]; //sets start node
-        if (key.All(char.IsDigit)) //checks if the node is a number, as those ones can give hints
+        if (!runningDialogue && !optionsGiven)
         {
-            saveHintBtn.SetActive(true);
+            saveUsed = false;
+            currentNode = allNodes[key]; //sets start node
+            if (key.All(char.IsDigit)) //checks if the node is a number, as those ones can give hints
+            {
+                saveHintBtn.SetActive(true);
+            }
+            activateDialogue(); //starts dialogue
         }
-        activateDialogue(); //starts dialogue
+        
     }
 
     void checkCurrentState(InputAction.CallbackContext callback) //this takes an input and decides if something needs to be done
