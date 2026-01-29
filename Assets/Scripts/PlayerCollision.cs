@@ -5,7 +5,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public static event Action<npcDialogueData> OnNpcContactStarted;
     public static event Action OnNpcContactEnded;
-    public static event Action<string> OnNpcInteracted;
+    public static event Action<string, int> OnNpcInteracted;
     public static event Action<npcDialogueData> accuseNPC;
 
     [SerializeField] private npcDialogueData currentNpc;
@@ -79,7 +79,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (currentNpc != null)
         {
-            OnNpcInteracted?.Invoke(currentNpc.getDialogueKey());
+            OnNpcInteracted?.Invoke(currentNpc.getDialogueKey(), currentNpc.getSpriteIndex());
             //pm = gameObject.GetComponent<PlayerMovement>();
             pm.SetcanMoveFalse();
             currentNpc.startNPCConversation();

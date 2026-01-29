@@ -6,6 +6,7 @@ public class npcDialogueData : MonoBehaviour
 {
     [SerializeField] private string dialogueKey = "1";
     [SerializeField] private string secondDialogueKey = "A";
+    [SerializeField] private int spriteIndex;
     [SerializeField] private bool beingSpokenTo = false;
     [SerializeField] private bool CANBeSpokenTo = true;
     [SerializeField] private CrowdAgent ca;
@@ -53,10 +54,17 @@ public class npcDialogueData : MonoBehaviour
         if (gameObject.name.Contains("Good"))
         {
             secondDialogueKey = temp;
+            spriteIndex = int.Parse(dialogueKey)-1;
+        }
+        else if (gameObject.name.Contains("Bad"))
+        {
+            dialogueKey = "H";
+            spriteIndex = 4;
         }
         else
         {
             dialogueKey = temp;
+            spriteIndex = rnjesus.rand.Next(0, 5);
         }
     }
 
@@ -87,6 +95,11 @@ public class npcDialogueData : MonoBehaviour
             return secondDialogueKey;
         }
         
+    }
+
+    public int getSpriteIndex()
+    {
+        return spriteIndex;
     }
 
     void endNPCConversation()

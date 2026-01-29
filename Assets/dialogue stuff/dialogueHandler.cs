@@ -29,6 +29,8 @@ public class dialogueHandler : MonoBehaviour
     [SerializeField] private List<string> savedDialogue = new List<string>();
     //Other
     [SerializeField] private GameObject dialogueUI;
+    [SerializeField] private GameObject[] npcUIImages;
+    [SerializeField] private GameObject imageToReveal;
     public static event Action triggerEndConversation;
 
     void Start()
@@ -70,7 +72,7 @@ public class dialogueHandler : MonoBehaviour
         PlayerCollision.OnNpcInteracted -= startConversation;
     }
 
-    public void startConversation(string key) //used to set the start node and start dialogue
+    public void startConversation(string key, int index) //used to set the start node and start dialogue
     {
         if (!runningDialogue && !optionsGiven)
         {
@@ -80,6 +82,8 @@ public class dialogueHandler : MonoBehaviour
             {
                 saveHintBtn.SetActive(true);
             }
+            imageToReveal = npcUIImages[index];
+            imageToReveal.SetActive(true);
             activateDialogue(); //starts dialogue
         }
         
@@ -160,6 +164,7 @@ public class dialogueHandler : MonoBehaviour
         saveHintBtn.SetActive(false);
         dialogueUI.SetActive(false);
         triggerEndConversation?.Invoke();
+        imageToReveal.SetActive(false);
     }
 
     public void returnDialogue(TMP_Text t) //gets the clicked button and checks the text to set the next node
