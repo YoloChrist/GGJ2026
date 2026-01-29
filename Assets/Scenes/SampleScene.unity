@@ -1137,7 +1137,6 @@ GameObject:
   m_Component:
   - component: {fileID: 504845141}
   - component: {fileID: 504845140}
-  - component: {fileID: 504845142}
   m_Layer: 0
   m_Name: DialogueHandler
   m_TagString: Untagged
@@ -1204,18 +1203,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &504845142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504845139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa30b4dee4753f46b5f930f34af0d84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::accusingScript
 --- !u!1 &581922583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,6 +3873,7 @@ GameObject:
   - component: {fileID: 1899886693}
   - component: {fileID: 1899886692}
   - component: {fileID: 1899886691}
+  - component: {fileID: 1899886695}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3933,6 +3921,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fce348370b6ad4ab9d97c3c0c984dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+  interactAction:
+    m_Name: Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b507ff9f-073a-4cdd-af59-60155d13c1db
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 68344e69-4099-4dfa-8374-0660cc9564c0
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
 --- !u!4 &1899886694
 Transform:
   m_ObjectHideFlags: 0
@@ -3948,6 +3953,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1899886695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899886690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa30b4dee4753f46b5f930f34af0d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::accusingScript
 --- !u!1 &1968257777
 GameObject:
   m_ObjectHideFlags: 0
