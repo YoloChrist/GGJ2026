@@ -197,3 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44dd9018969611e47bcf6edd3d050c09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollision
+  currentNpc: {fileID: 0}
+  pm: {fileID: 2909690567721194571}

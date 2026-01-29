@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private ForceMode2D forceMode = ForceMode2D.Force;
+    [SerializeField] private bool canMove = true;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -38,6 +39,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb == null) return;
 
+        if (!canMove) return;
+
         rb.AddForce(moveInput * moveSpeed, forceMode);
+    }
+
+    public void SetcanMoveTrue()
+    {
+        canMove = true;
+    }
+
+    public void SetcanMoveFalse()
+    {
+        canMove = false;
     }
 }

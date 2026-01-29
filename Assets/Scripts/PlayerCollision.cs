@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public static event Action<npcDialogueData> accuseNPC;
 
     [SerializeField] private npcDialogueData currentNpc;
+    [SerializeField] private PlayerMovement pm;
 
     private void OnEnable()
     {
@@ -79,16 +80,17 @@ public class PlayerCollision : MonoBehaviour
         if (currentNpc != null)
         {
             OnNpcInteracted?.Invoke(currentNpc.getDialogueKey());
-            PlayerMovement pm = gameObject.GetComponent<PlayerMovement>();
-            pm.enabled = false;
+            //pm = gameObject.GetComponent<PlayerMovement>();
+            pm.SetcanMoveFalse();
             currentNpc.startNPCConversation();
         }
     }
 
     void activatePlayerMovement()
     {
-        PlayerMovement pm = gameObject.GetComponent<PlayerMovement>();
-        pm.enabled = true;
+        //pm = gameObject.GetComponent<PlayerMovement>();
+        pm.SetcanMoveTrue();
+        Debug.Log("RUN");
     }
 
     public void callAccuse()

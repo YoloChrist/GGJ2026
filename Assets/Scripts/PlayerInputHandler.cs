@@ -12,8 +12,8 @@ public class PlayerInputHandler : MonoBehaviour
     public static event Action<Vector2> OnMoveInput;
     public static event Action OnInteractPressed;
 
-    private InputAction moveAction;
-    private InputAction interactAction;
+    [SerializeField] private InputAction moveAction;
+    [SerializeField] private InputAction interactAction;
     private Vector2 previousInput;
 
     void Awake()

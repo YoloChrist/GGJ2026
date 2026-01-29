@@ -40,9 +40,9 @@ public class dialogueHandler : MonoBehaviour
     {
         allNodes = new Dictionary<string, dialogueNode>();
         //getting and reading file
-        string path = Application.dataPath + "/dialogue stuff/dialogue.csv";
-        string nodesCSV = File.ReadAllText(path);
-        string[] lines = nodesCSV.Split(new[] { '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries); //splits lines
+        //string path = Application.dataPath + "/dialogue stuff/dialogue.csv";
+        TextAsset nodesCSV = Resources.Load<TextAsset>("dialogue");
+        string[] lines = nodesCSV.text.Split(new[] { '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries); //splits lines
 
         foreach (string line in lines)
         {

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Linq;
+using System;
 
 public class npcDialogueData : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class npcDialogueData : MonoBehaviour
     [SerializeField] private bool beingSpokenTo = false;
     [SerializeField] private bool CANBeSpokenTo = true;
     [SerializeField] private CrowdAgent ca;
+    public static event Action addToTimerCounter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -90,7 +93,12 @@ public class npcDialogueData : MonoBehaviour
         if (beingSpokenTo)
         {
             ca.ResumeAI();
-            beingSpokenTo = false; 
+            beingSpokenTo = false;
+            if (CANBeSpokenTo && gameObject.name.Contains("Good"))
+            {
+                addToTimerCounter?.Invoke();
+            }
+            CANBeSpokenTo = false;
         }
         
     }
@@ -99,7 +107,6 @@ public class npcDialogueData : MonoBehaviour
     {
         beingSpokenTo = true;
         ca.PauseAI();
-        CANBeSpokenTo = false;
     }
 
     public bool getSpokenTo()
