@@ -9,6 +9,7 @@ public class npcDialogueData : MonoBehaviour
     [SerializeField] private bool beingSpokenTo = false;
     [SerializeField] private bool CANBeSpokenTo = true;
     [SerializeField] private CrowdAgent ca;
+    [SerializeField] private GameObject speechIndicator;
     public static event Action addToTimerCounter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -96,6 +97,10 @@ public class npcDialogueData : MonoBehaviour
             beingSpokenTo = false;
             if (CANBeSpokenTo && gameObject.name.Contains("Good"))
             {
+                if (speechIndicator != null)
+                {
+                    speechIndicator.SetActive(false);
+                }
                 addToTimerCounter?.Invoke();
             }
             CANBeSpokenTo = false;
