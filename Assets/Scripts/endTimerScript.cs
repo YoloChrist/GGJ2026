@@ -9,7 +9,7 @@ public class endTimerScript : MonoBehaviour
 {
     [SerializeField] private int goodNPCsSpoeknTo = 0;
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private int totalTime = 60;
+    [SerializeField] private int totalTime = 90;
     [SerializeField] private int currentTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

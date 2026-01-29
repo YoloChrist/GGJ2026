@@ -64,7 +64,8 @@ public class npcDialogueData : MonoBehaviour
         else
         {
             dialogueKey = temp;
-            spriteIndex = rnjesus.rand.Next(0, 5);
+            secondDialogueKey = temp;
+            spriteIndex = rnjesus.rand.Next(0, 3);
         }
     }
 
