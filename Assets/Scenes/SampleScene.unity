@@ -2156,9 +2156,9 @@ MonoBehaviour:
   m_fontSize: 30
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 5
+  m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -2221,8 +2221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139.39, y: -28.7767}
-  m_SizeDelta: {x: 278.77, y: 262.0571}
+  m_AnchoredPosition: {x: 1.9746, y: -28.7767}
+  m_SizeDelta: {x: 553.6, y: 262.0571}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &984099968
 PrefabInstance:
@@ -2397,7 +2397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139.39, y: 124.37}
+  m_AnchoredPosition: {x: -135.44, y: 124.37}
   m_SizeDelta: {x: 278.77, y: 44.234}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166183559
