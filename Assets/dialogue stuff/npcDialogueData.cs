@@ -7,18 +7,21 @@ public class npcDialogueData : MonoBehaviour
     [SerializeField] private string dialogueKey = "1";
     [SerializeField] private string secondDialogueKey = "A";
     [SerializeField] private int spriteIndex;
+    [SerializeField] private int otherSpriteIndex;
     [SerializeField] private bool beingSpokenTo = false;
     [SerializeField] private bool CANBeSpokenTo = true;
     [SerializeField] private CrowdAgent ca;
     [SerializeField] private GameObject speechIndicator;
+    [SerializeField] private SpriteRenderer sr;
     public static event Action addToTimerCounter;
+    [SerializeField] private npcspriteManager npcsm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         string temp = "";
 
-        int val = rnjesus.rand.Next(1, 9);
+        int val = rnjesus.rand.Next(1, 8);
 
         switch (val)
         {
@@ -44,9 +47,6 @@ public class npcDialogueData : MonoBehaviour
                 temp = "G";
                 break;
             case 8:
-                temp = "H";
-                break;
-            case 9:
                 temp = "I";
                 break;
         }
@@ -55,14 +55,19 @@ public class npcDialogueData : MonoBehaviour
         {
             secondDialogueKey = temp;
             spriteIndex = int.Parse(dialogueKey)-1;
+            sr.sprite = npcsm.getSprite(spriteIndex, "special");
         }
         else if (gameObject.name.Contains("Bad"))
         {
             dialogueKey = "H";
+            secondDialogueKey = "H";
             spriteIndex = 4;
+            sr.sprite = npcsm.getSprite(spriteIndex, "special");
         }
         else
         {
+            int i = rnjesus.rand.Next(0,6);
+            sr.sprite = npcsm.getSprite(i, "generic");
             dialogueKey = temp;
             secondDialogueKey = temp;
             spriteIndex = rnjesus.rand.Next(0, 3);

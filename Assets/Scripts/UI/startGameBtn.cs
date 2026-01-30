@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
 public class startGameBtn : MonoBehaviour
 {
+    [SerializeField] private dialogueHandler dh;
+    [SerializeField] private GameObject dialogueUI;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +15,7 @@ public class startGameBtn : MonoBehaviour
 
     void TaskOnClick()
     {
-        SceneManager.LoadScene("SampleScene");
+        dialogueUI.SetActive(true);
+        dh.startMenuText();
     }
 }

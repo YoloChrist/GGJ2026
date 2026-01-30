@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using System.IO;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 public class dialogueHandler : MonoBehaviour
 {
@@ -86,7 +87,12 @@ public class dialogueHandler : MonoBehaviour
             imageToReveal.SetActive(true);
             activateDialogue(); //starts dialogue
         }
-        
+    }
+
+    public void startMenuText()
+    {
+        currentNode = allNodes["start"];
+        activateDialogue();
     }
 
     void checkCurrentState(InputAction.CallbackContext callback) //this takes an input and decides if something needs to be done
@@ -159,12 +165,20 @@ public class dialogueHandler : MonoBehaviour
 
     public void hideText() //hides all dialogue UI
     {
-        dialogueText.SetText("");
-        currentText = "";
-        saveHintBtn.SetActive(false);
-        dialogueUI.SetActive(false);
-        triggerEndConversation?.Invoke();
-        imageToReveal.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "startScene")
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+        else
+        {
+            dialogueText.SetText("");
+            currentText = "";
+            saveHintBtn.SetActive(false);
+            dialogueUI.SetActive(false);
+            triggerEndConversation?.Invoke();
+            imageToReveal.SetActive(false);
+        }
+        
     }
 
     public void returnDialogue(TMP_Text t) //gets the clicked button and checks the text to set the next node

@@ -21,6 +21,10 @@ public class CrowdAgent : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
+
+        int x = rnjesus.rand.Next(-59, 62);
+        int y = rnjesus.rand.Next(-34, 29);
+        transform.position = new Vector3(x,y,0);
     }
 
     private void OnEnable()
