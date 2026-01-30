@@ -10204,7 +10204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::endTimerScript
   goodNPCsSpoeknTo: 0
   timerText: {fileID: 1569793011}
-  totalTime: 60
+  totalTime: 90
   currentTime: 0
 --- !u!114 &1899886697
 MonoBehaviour:
