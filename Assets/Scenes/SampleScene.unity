@@ -7435,12 +7435,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4070664004845891892, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
+      propertyPath: m_LinearDamping
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070664004845891892, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
       propertyPath: m_AngularDamping
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 4204278998740959533, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847407452107077168, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.3668213
+      objectReference: {fileID: 0}
+    - target: {fileID: 5847407452107077168, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008149783
       objectReference: {fileID: 0}
     - target: {fileID: 7418287596652851216, guid: 90278d8fde25ecf4d9cc75c591c73f2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8205,7 +8217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 1311614126}
-  FollowSpeed: 2
+  FollowSpeed: 3
 --- !u!114 &1456888858
 MonoBehaviour:
   m_ObjectHideFlags: 0
